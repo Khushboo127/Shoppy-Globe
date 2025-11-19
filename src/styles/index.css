@@ -1,0 +1,130 @@
+/* Updated global styles with modern color scheme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #1a1a2e;
+    --secondary: #ffffff;
+    --accent: #5a2e1e;
+    --accent-light: #ff8c5a;
+    --text: #2c3e50;
+    --text-light: #555;
+    --light-bg: #f8f9fa;
+    --border: #e8e8e8;
+    --success: #27ae60;
+    --error: #e74c3c;
+    --warning: #f39c12;
+    --radius: 12px;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    background-color: #f5f7fa;
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Loading and Error States */
+.spinner {
+    border: 4px solid var(--light-bg);
+    border-top: 4px solid var(--accent);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    animation: spin 0.8s linear infinite;
+    margin: 2rem auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading,
+.error,
+.no-products {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 18px;
+    border-radius: var(--radius);
+}
+
+.loading {
+    background: white;
+    box-shadow: var(--shadow-sm);
+    color: var(--text);
+}
+
+.error {
+    color: var(--error);
+    background: #ffe8e8;
+    border: 1px solid #ffcccb;
+}
+
+.no-products {
+    background: white;
+    color: var(--text-light);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .main-content {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 0 16px;
+    }
+
+    body {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 0 12px;
+    }
+}
