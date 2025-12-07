@@ -7,6 +7,9 @@ const ADD_TO_CART = 'ADD_TO_CART'
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
 const UPDATE_QUANTITY = 'UPDATE_QUANTITY'
 const CLEAR_CART = 'CLEAR_CART'
+const SET_CART_FROM_BACKEND = 'SET_CART_FROM_BACKEND'   // 👈 NEW
+
+// --- action creators ---
 
 export const addToCart = (product) => ({
     type: ADD_TO_CART,
@@ -25,6 +28,12 @@ export const updateQuantity = (payload) => ({
 
 export const clearCart = () => ({
     type: CLEAR_CART
+})
+
+// 👇 NEW: overwrite whole cart with data from backend
+export const setCartFromBackend = (items) => ({
+    type: SET_CART_FROM_BACKEND,
+    payload: items || []
 })
 
 export default function cartReducer(state = initialState, action) {
@@ -70,9 +79,17 @@ export default function cartReducer(state = initialState, action) {
             return newState
         }
 
-        case CLEAR_CART:
+        case CLEAR_CART: {
             localStorage.removeItem('cartItems')
             return { items: [] }
+        }
+
+        // 👇 NEW: replace Redux + localStorage with backend cart
+        case SET_CART_FROM_BACKEND: {
+            const items = action.payload || []
+            localStorage.setItem('cartItems', JSON.stringify(items))
+            return { items }
+        }
 
         default:
             return state

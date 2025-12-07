@@ -1,184 +1,132 @@
-# ShoppyGlobe - E-Commerce Application
+ShoppyGlobe – MERN E-Commerce Application
 
-A modern, fully-functional e-commerce application built with React, Redux, and React Router. Features product browsing by category, shopping cart management, and checkout functionality.
+A full-stack e-commerce project built using Node.js, Express, MongoDB, React, Redux, JWT Authentication, and REST APIs.
+This project includes product listing, user authentication, cart management, order creation, and MongoDB storage.
 
-## GitHub Repository
+✨ Features
+🔐 Authentication
 
-**Repository Link:** https://github.com/Khushboo127/Shoppy-Globe.git
+User Registration & Login
+JWT-based authentication
+Protected cart & order routes
 
-## Features
+🛒 Cart & Orders
 
-### Core Functionality
-- **6 Product Categories**: Makeup, Clothes, Shoes, Electronics, Home Decor, Groceries, Jewellery
-- **Product Browsing**: View all products or filter by category
-- **Shopping Cart**: Add/remove items, adjust quantities
-- **Product Details**: Detailed product information page with full description
-- **Search Functionality**: Real-time product search using Redux state
-- **Checkout**: Customer information form with order summary
-- **Price Currency**: All prices displayed in Indian Rupees (₹)
+Add to Cart
+Update cart quantity
+Remove item
 
-### Technical Features
-- Custom `useProducts` hook for API data fetching
-- Redux for state management (cart, search)
-- React Router v6 with dynamic routing
-- Lazy loading with React.lazy() and Suspense
-- Error handling for failed requests
-- Responsive design (mobile, tablet, desktop)
-- Local storage persistence for cart
+Clear cart after order
+Place order with full detail form
 
-## Project Structure
+🛍️ Products
 
+Product list fetched from MongoDB
+Product details page
+Dummy seed script for initial data
+
+🧩 Frontend
+
+Built using React + Redux Toolkit
+Fully connected with backend
+Uses token from localStorage
+Login / Logout implemented
+
+
+🚀 Tech Stack
+Frontend
+React.js
+React Router
+Redux Toolkit (Cart State)
+Axios
+CSS (Custom UI Components)
+Backend
+Node.js
+Express.js
+MongoDB + Mongoose
+JWT Authentication
+REST API Architecture
+
+
+📂 Project Structure
 shoppy-globe/
-├── src/
-│   ├── components/
-│   │   ├── Header.jsx
-│   │   ├── Footer.jsx
-│   │   ├── ProductList.jsx
-│   │   ├── ProductItem.jsx
-│   │   ├── SearchBar.jsx
-│   │   ├── CategorySection.jsx
-│   │   ├── CategoryIcons.jsx
-│   │   ├── Cart/
-│   │   │   ├── Cart.jsx
-│   │   │   └── CartItem.jsx
-│   │   └── Layout.jsx
-│   ├── pages/
-│   │   ├── Home.jsx
-│   │   ├── ProductDetail.jsx
-│   │   ├── Cart.jsx
-│   │   ├── Checkout.jsx
-│   │   └── NotFound.jsx
-│   ├── hooks/
-│   │   └── useProducts.js
-│   ├── data/
-│   │   └── dummyProducts.js
-│   ├── redux/
-│   │   ├── store.js
-│   │   ├── cartSlice.js
-│   │   └── searchSlice.js
-│   ├── styles/
-│   │   ├── index.css
-│   │   ├── header.css
-│   │   ├── product-list.css
-│   │   ├── product-item.css
-│   │   ├── cart.css
-│   │   ├── checkout.css
-│   │   └── ... (other CSS files)
-│   ├── App.jsx
-│   └── main.jsx
-├── index.html
-├── vite.config.js
-├── package.json
+│
+├── backend/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   ├── seed/
+│   ├── .env
+│   └── server.js
+│
+├── frontend/
+│   ├── src/
+│   │   ├── api/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── pages/
+│   │   ├── redux/
+│   │   └── styles/
+│   └── package.json
+│
 └── README.md
-\`\`\`
 
-## Installation & Setup
+⚙️ Setup Instructions
+🔧 1. Clone the Repository
+git clone https://github.com/Khushboo127/Shoppy-Globe_Full-Stack-Application.git
+cd shoppy-globe
 
-### Prerequisites
-- Node.js v16 or higher
-- npm or yarn
+📌 Backend Setup
+Navigate to backend folder:
+cd backend
 
-### Local Setup
+Install dependencies:
+npm install
 
-1. **Clone the repository:**
-  
-   git clone https://github.com/Khushboo127/Shoppy-Globe.git
-   cd shoppy-globe
-  
+Add .env file:
+MONGO_URI=your_mongo_connection_string
+JWT_SECRET=your_secret_key
+PORT=5000
 
-2. **Install dependencies:**
-  
-   npm install
-   
+Seed the product database:
+node seedProducts.js
 
-3. **Start development server:**
-  
-   npm run dev
- 
-
-4. **Open in browser:**
-   - The app will open at `http://localhost:5173`
-   - If it doesn't open automatically, navigate to that URL
+Start backend:
+npm run dev
 
 
-This creates an optimized production build in the `dist` folder.
+Backend runs at:
 
-## How to Use
+http://localhost:5000
 
-1. **Browse Products**: View products by category on the home page
-2. **Search**: Use the search bar to find specific products
-3. **View Details**: Click on any product to see full details
-4. **Add to Cart**: Click "Add to Cart" button to add items
-5. **Manage Cart**: View cart, adjust quantities, remove items
-6. **Checkout**: Fill in your details and place order
-7. **Completion**: Get order confirmation and auto-redirect to home
+🖥️ Frontend Setup
+Navigate to frontend:
+cd frontend
 
-## Categories Available
+Install dependencies:
+npm install
 
-- **Makeup**: Cosmetics and beauty products
-- **Clothes**: Fashion and apparel
-- **Shoes**: Footwear collection
-- **Electronics**: Tech gadgets and devices
-- **Home Decor**: Interior design items
-- **Groceries**: Food and grocery items
-- **Jewellery**: Jewelry and accessories
-
-## Technologies Used
-
-- **Frontend**: React
-- **Build Tool**: Vite
-- **State Management**: Redux Toolkit
-- **Routing**: React Router v6
-- **Styling**: CSS3 with modern features
-- **Data**: Dummy product database
-
-## Key Implementation Details
-
-### Custom Hook: useProducts
-Fetches product data with error handling and loading states.
-
-### Redux Slices
-- **cartSlice**: Manages add, remove, update, and clear cart actions
-- **searchSlice**: Manages search query and filtered products
-
-### Lazy Loading
-All route components use React.lazy() with Suspense for code splitting.
-
-### Responsive Design
-Mobile-first approach with breakpoints at 1024px, 768px, and 480px.
+Start frontend:
+npm run dev
 
 
-## Performance Optimizations
+Frontend runs at:
 
-- Code splitting with lazy loading
-- Image lazy loading
-- Optimized re-renders with Redux selectors
-- CSS minification in production build
-- Efficient component composition
+http://localhost:5173
 
-## Future Enhancements
+🧪 API Endpoints
+🔐 Authentication
+Method	Endpoint	Description
+POST	/api/auth/register	Create new user
+POST	/api/auth/login	Login user & get JWT
+🛒 Cart
+Method	Endpoint	Description
+GET	/api/cart	Get user cart
+POST	/api/cart	Add item to cart
+PUT	/api/cart/:id	Update item quantity
+DELETE	/api/cart/:id	Remove item
+📦 Orders
+Method	Endpoint	Description
+POST	/api/orders	Place order
 
-- Add payment gateway integration (Stripe)
-- User authentication and profiles
-- Order history and tracking
-- Product reviews and ratings
-- Wishlist functionality
-- Advanced filtering options
-
-## Troubleshooting
-
-### Images not loading
-- Check internet connection
-- Verify image URLs are accessible
-- Clear browser cache and reload
-
-### Cart not persisting
-- Enable localStorage in browser
-- Check Redux store initialization
-- Verify Redux DevTools integration
-
-
-
-
-
-
+Screenshot of thunderClient , MongoDb , And Website look Added a pdf in this folder
