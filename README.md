@@ -73,7 +73,7 @@ shoppy-globe/
 
 ⚙️ Setup Instructions
 🔧 1. Clone the Repository
-git clone https://github.com/Khushboo127/Shoppy-Globe_Full-Stack-Application.git
+git clone https://github.com/Khushboo127/Shoppy-Globe
 cd shoppy-globe
 
 📌 Backend Setup
