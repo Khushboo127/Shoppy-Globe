@@ -2,7 +2,9 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:5000/api", // 👈 important
+    baseURL: import.meta.env.VITE_API_URL
+        ? `${import.meta.env.VITE_API_URL}/api`
+        : "http://localhost:5000/api",
 });
 
 // Attach token from localStorage if present
