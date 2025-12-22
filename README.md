@@ -3,6 +3,7 @@ ShoppyGlobe – MERN E-Commerce Application
 A full-stack e-commerce project built using Node.js, Express, MongoDB, React, Redux, JWT Authentication, and REST APIs.
 This project includes product listing, user authentication, cart management, order creation, and MongoDB storage.
 
+##Live Project :- https://shoppy-globe-frontend.onrender.com
 ✨ Features
 🔐 Authentication
 
