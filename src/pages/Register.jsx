@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import api from "../api/client";           // axios instance (same as login)
-import "../styles/login.css";             // reuse login / auth styles
+import "../styles/Login.css";             // reuse login / auth styles
 
 export default function Register() {
     const navigate = useNavigate();
