@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   // GitHub Pages base path – must match repo name
-  base: '/Shoppy-Globe/',
+  base: '/',
   build: {
     // 👇 Build into /docs for GitHub Pages
     outDir: 'docs',
